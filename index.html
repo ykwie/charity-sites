@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025新芽奖学金资格检查系统（SPM毕业生）</title>
+    <title>2025新芽奖学金资格检查系统（2024的SPM毕业生）</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -136,7 +136,7 @@
         }
         
         .btn {
-            display: inline-block;
+            display: block;
             background: linear-gradient(135deg, var(--tzu-chi-blue), var(--tzu-chi-light-blue));
             color: white;
             border: none;
@@ -284,7 +284,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <h1 id="main-title">2025新芽奖学金资格检查系统（SPM毕业生）</h1>
+            <h1 id="main-title">2025新芽奖学金资格检查系统（2024的SPM毕业生）</h1>
             <p id="sub-title">由慈济志工填写</p>
         </div>
     </div>
@@ -395,7 +395,7 @@
         // 双语文本
         const translations = {
             zh: {
-                title: "2025新芽奖学金资格检查系统（SPM毕业生）",
+                title: "2025新芽奖学金资格检查系统（2024的SPM毕业生）",
                 subtitle: "由慈济志工填写",
                 caseId: "流水号 Case ID",
                 volunteer: "志工名字 Volunteer Name",
@@ -404,18 +404,18 @@
                 totalSubjects: "总科目数量",
                 subjectNote: "（通常SPM考试共有10科）",
                 footer: "© 2025 慈济新芽奖学金资格检查系统 | Tzu Chi SPM Scholarship Eligibility Checker",
-                eligibleTitle: "恭喜，{name}！🎉",
-                eligibleText1: "孩子的SPM平均分为: <strong>{average}</strong> ✨",
+                eligibleTitle: "恭喜！🎉",
+                eligibleText1: "{name}的SPM平均分为: <strong>{average}</strong> ✨",
                 eligibleText2: "已符合申请新芽奖学金的资格！🌈",
                 eligibleButton: "📝 立即填写新芽推荐表",
-                notEligibleTitle: "感谢检查，{name}",
-                notEligibleText1: "孩子的SPM平均分为: <strong>{average}</strong>",
+                notEligibleTitle: "感谢检查",
+                notEligibleText1: "{name}的SPM平均分为: <strong>{average}</strong>",
                 notEligibleText2: "很遗憾，学生的平均分未达到申请新芽奖学金的要求。",
                 notEligibleText3: "请继续鼓励孩子，相信未来还是有很多机会的。感恩🙏",
                 wisdomQuote: "社會的希望在人才，人才的希望在教育；家庭的希望在孩子，孩子的希望也在教育。<br>The hope of the society lies in its talented human resources; while the hope of these talents comes from education."
             },
             en: {
-                title: "2025 Tzu Chi SPM Scholarship Eligibility Checker",
+                title: "2025 Xin-ya Scholarship Eligibility Checker (For 2024 SPM students)",
                 subtitle: "To be filled by Tzu Chi Volunteer",
                 caseId: "Case ID",
                 volunteer: "Volunteer Name",
@@ -424,13 +424,13 @@
                 totalSubjects: "Total Subjects",
                 subjectNote: "(Typically SPM has 10 subjects)",
                 footer: "© 2025 Tzu Chi SPM Scholarship Eligibility Checker",
-                eligibleTitle: "Congratulations, {name}! 🎉",
-                eligibleText1: "Child's SPM average score: <strong>{average}</strong> ✨",
-                eligibleText2: "Eligible for Tzu Chi Scholarship! 🌈",
-                eligibleButton: "📝 Fill in Recommendation Form Now",
-                notEligibleTitle: "Thank you for checking, {name}",
-                notEligibleText1: "Child's SPM average score: <strong>{average}</strong>",
-                notEligibleText2: "Unfortunately, the student's average score does not meet the requirements for Tzu Chi Scholarship.",
+                eligibleTitle: "Congratulations! 🎉",
+                eligibleText1: "{name}'s average SPM score is: <strong>{average}</strong> ✨",
+                eligibleText2: "The student is eligible for the Xin-ya Scholarship! 🌈",
+                eligibleButton: "📝 Fill out the Xin-ya Recommendation Form now",
+                notEligibleTitle: "Thank you for checking",
+                notEligibleText1: "{name}'s SPM average score: <strong>{average}</strong>",
+                notEligibleText2: "Unfortunately, the student's average score does not meet the requirements for Xin-ya Scholarship.",
                 notEligibleText3: "Please continue to encourage the child. There will be many opportunities in the future. With gratitude 🙏",
                 wisdomQuote: "The hope of the society lies in its talented human resources; while the hope of these talents comes from education.<br>社會的希望在人才，人才的希望在教育；家庭的希望在孩子，孩子的希望也在教育。"
             }
@@ -547,16 +547,16 @@
             if (average >= 70) {
                 resultDiv.className = 'result eligible';
                 resultDiv.innerHTML = `
-                    <h3>${t.eligibleTitle.replace('{name}', name)}</h3>
-                    <p>${t.eligibleText1.replace('{average}', average.toFixed(2))}</p>
+                    <h3>${t.eligibleTitle}</h3>
+                    <p>${t.eligibleText1.replace('{name}', name).replace('{average}', average.toFixed(2))}</p>
                     <p>${t.eligibleText2}</p>
                     <a href="https://forms.gle/Mx1sBQUMs7GuLroa9" target="_blank">${t.eligibleButton}</a>
                 `;
             } else {
                 resultDiv.className = 'result not-eligible';
                 resultDiv.innerHTML = `
-                    <h3>${t.notEligibleTitle.replace('{name}', name)}</h3>
-                    <p>${t.notEligibleText1.replace('{average}', average.toFixed(2))}</p>
+                    <h3>${t.notEligibleTitle}</h3>
+                    <p>${t.notEligibleText1.replace('{name}', name).replace('{average}', average.toFixed(2))}</p>
                     <p>${t.notEligibleText2}</p>
                     <p>${t.notEligibleText3}</p>
                 `;
