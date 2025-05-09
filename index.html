@@ -65,14 +65,6 @@
             margin-bottom: 2rem;
         }
         
-        .volunteer-section {
-            background-color: #f8fafc;
-            border-left: 4px solid var(--tzu-chi-green);
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-radius: 0 8px 8px 0;
-        }
-        
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -296,21 +288,9 @@
         </div>
         
         <div class="card">
-           <!-- <div class="volunteer-section">
-                <div class="form-group">
-                    <label id="case-id-label">流水号 Case ID</label>
-                    <input type="text" id="case-id" placeholder="请输入流水号">
-                </div>-->
-             
-              <!--  <div class="form-group">
-                    <label id="volunteer-label">志工名字 Volunteer Name</label>
-                    <input type="text" id="volunteer-name" placeholder="请输入志工姓名">
-                </div>-->
-            </div>
-             
             <div class="form-group">
                 <label id="student-name-label">学生姓名 Student Name</label>
-                <input type="text" id="name" placeholder="请输入学生姓名 Please key in student name">
+                <input type="text" id="name" placeholder="请输入学生姓名">
             </div>
             
             <div class="grades-container">
@@ -371,7 +351,7 @@
             </div>
             
             <button class="btn" onclick="calculateResult()" id="calculate-btn">
-                <i class="fas fa-calculator"></i> <span id="calculate-text">检查结果 Check Result</span>
+                <i class="fas fa-calculator"></i> <span id="calculate-text">检查结果</span>
             </button>
             
             <div id="result" class="result">
@@ -398,8 +378,6 @@
             zh: {
                 title: "2025新芽奖学金资格检查系统（2024的SPM毕业生）",
                 subtitle: "由慈济志工填写",
-                caseId: "流水号 Case ID",
-                volunteer: "志工名字 Volunteer Name",
                 studentName: "学生姓名 Student Name",
                 calculate: "检查结果",
                 totalSubjects: "总科目数量",
@@ -411,15 +389,13 @@
                 eligibleButton: "📝 立即填写新芽推荐表",
                 notEligibleTitle: "感谢检查",
                 notEligibleText1: "{name}的SPM平均分为: <strong>{average}</strong>",
-                notEligibleText2: "很遗憾，学生的平均分未达到申请新芽奖学金的要求（70分以上）。",
+                notEligibleText2: "很遗憾，学生的平均分未达到申请新芽奖学金的要求(70分或以上）。",
                 notEligibleText3: "请继续鼓励孩子，相信未来还是有很多机会的。感恩🙏",
                 wisdomQuote: "社會的希望在人才，人才的希望在教育；家庭的希望在孩子，孩子的希望也在教育。<br>The hope of the society lies in its talented human resources; while the hope of these talents comes from education."
             },
             en: {
                 title: "2025 Xin-Ya Scholarship Eligibility Checker (For 2024 SPM students)",
                 subtitle: "To be filled by Tzu Chi Volunteer",
-                caseId: "Case ID",
-                volunteer: "Volunteer Name",
                 studentName: "Student Name",
                 calculate: "Check Result",
                 totalSubjects: "Total Subjects",
@@ -427,11 +403,11 @@
                 footer: "© 2025 Xin-Ya Scholarship Eligibility Checker",
                 eligibleTitle: "Congratulations! 🎉",
                 eligibleText1: "{name}'s average SPM score is: <strong>{average}</strong> ✨",
-                eligibleText2: "The student is eligible for the Xin-Ya Scholarship! 🌈",
+                eligibleText2: "The student is eligible for the Xin-ya Scholarship! 🌈",
                 eligibleButton: "📝 Fill out the Xin-Ya Recommendation Form now",
                 notEligibleTitle: "Thank you for checking",
                 notEligibleText1: "{name}'s SPM average score: <strong>{average}</strong>",
-                notEligibleText2: "Unfortunately, the student's average score does not meet the requirements for Xin-ya Scholarship (above 70 points).",
+                notEligibleText2: "Unfortunately, the student's average score does not meet the requirements for Xin-ya Scholarship (More than 70 points).",
                 notEligibleText3: "Please continue to encourage the child. There will be many opportunities in the future. With gratitude 🙏",
                 wisdomQuote: "The hope of the society lies in its talented human resources; while the hope of these talents comes from education.<br>社會的希望在人才，人才的希望在教育；家庭的希望在孩子，孩子的希望也在教育。"
             }
@@ -463,8 +439,6 @@
             document.getElementById('sub-title').textContent = t.subtitle;
             
             // 更新表单标签
-            document.getElementById('case-id-label').textContent = t.caseId;
-            document.getElementById('volunteer-label').textContent = t.volunteer;
             document.getElementById('student-name-label').textContent = t.studentName;
             
             // 更新按钮
